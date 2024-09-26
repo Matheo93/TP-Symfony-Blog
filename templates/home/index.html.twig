@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block search %}
+<form class="d-flex mt-3" action="{{ path('app_article_search') }}" method="get">
+    <input class="form-control me-2" type="search" placeholder="Rechercher un article" name="q">
+    <button class="btn btn-outline-success" type="submit">Rechercher</button>
+</form>
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1 class="display-4">Bienvenue sur notre Blog</h1>
+    <p class="lead">Découvrez nos derniers articles et restez informé des dernières nouvelles.</p>
+    <hr class="my-4">
+    <p>Explorez nos catégories ou inscrivez-vous pour commenter les articles.</p>
+    <a class="btn btn-primary btn-lg" href="{{ path('app_article') }}" role="button">Voir tous les articles</a>
+</div>
+
+<h2 class="mt-5 mb-4">Derniers Articles</h2>
+<div class="row">
+    {% for article in latestArticles %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <p class="card-text">{{ article.content|u.truncate(100, '...') }}</p>
+                    <a href="{{ path('app_article_show', {'id': article.id}) }}" class="btn btn-sm btn-primary">Lire la suite</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Publié le {{ article.createdAt|date('d/m/Y') }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
