@@ -6,28 +6,28 @@ Ce projet est un blog développé avec Symfony 6.4, répondant aux exigences d'u
 
 1. Clonez le dépôt :
 git clone https://github.com/Matheo93/TP-Symfony-Blog.git
-Copy
+
 2. Installez les dépendances :
 composer install
-Copy
+
 3. Configurez votre base de données dans le fichier `.env.local`
 
 4. Créez la base de données :
 php bin/console doctrine:database:create
-Copy
+   
 5. Appliquez les migrations :
 php bin/console doctrine:migrations:migrate
-Copy
+   
 6. Chargez les fixtures (données de test) :
 php bin/console doctrine:fixtures:load
-Copy
+   
 7. Installez les dépendances front-end :
 npm install
 npm run build
-Copy
+   
 8. Lancez le serveur Symfony :
 symfony server:start
-Copy
+   
 ## Fonctionnalités
 
 - Système d'authentification (inscription, connexion, déconnexion)
@@ -47,10 +47,10 @@ Copy
 
 ## Auteur
 
-[Votre nom]
+[Beuve Mathéo]
 
 ## Licence
 
 Ce projet est sous licence MIT.
 Description du TP pour GitHub :
-CopyCe projet est un blog développé avec Symfony 6.4 dans le cadre d'un TP de développement web. Il met en œuvre
+CopyCe projet est un blog développé avec Symfony 6.4 dans le cadre d'un TP de développement web. Il met en œuvre les fonctionnalités essentielles d'un blog moderne, notamment la gestion des articles, des catégories, et des utilisateurs. Le projet utilise Doctrine ORM pour la persistance des données, Twig pour le rendu des templates, et intègre Bootstrap pour un design responsive. L'interface d'administration est gérée via EasyAdmin Bundle pour une gestion simplifiée du contenu.
